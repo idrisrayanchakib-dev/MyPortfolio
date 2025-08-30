@@ -23,6 +23,7 @@ import { SiTailwindcss, SiNextdotjs,
     { name: "Next.js", icon: <SiNextdotjs size={50} className="text-gray-300 min-w-[120px]" /> },
     { name: "Vite", icon: <img src="./icons/vite.svg" alt="Vite" className="w-12 h-12 min-w-[120px]" /> },
     { name: "Tailwind", icon: <SiTailwindcss size={50} className="text-cyan-500 min-w-[120px]" /> },
+    { name: "Threejs", icon: <i className="devicon-threejs-original text-white text-4xl min-w-[120px]"></i> },
   ];
 
     const backendFrameworks = [

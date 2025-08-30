@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 
 
 const typewriterTexts = [
-  "Full-Stack Software Engineer",
-  "AI & Data Processing Enthusiast", 
-  "Machine Learning Problem Solver",
-  "Building Intelligent Systems"
+  "Data & AI Software Engineer",
+  "Machine Learning Problem Solver", 
+  "Data Processing Expert",
+  "Building Intelligent Systems & Projects"
 ];
 
 
@@ -80,10 +80,7 @@ const [currentText, setCurrentText] = useState(0);
 
           {/* Body Text */}
           <p className="text-lg  max-w-3xl text-foreground/80 md:text-left lg:text-center leading-relaxed">
-            I'm a passionate developer with 6+ years of experience building
-            scalable applications and leading development teams. I specialize in
-            modern web technologies  and have a strong focus on clean architecture
-            and user experience.
+            I'm a passionate Software Engineer and Data enthusiast, fascinated by thge power of information and intelligent systems. I love transforming raw data into actionable insights and building innovative applications that solve real-world problems. My journey revolves around exploring the world of Machine Learning, Data Processing, and AI, while continuously challenging myself to learn, create, and push the boundaries of technology. My ultimate goal is to design impactful solutions and carve a space as a forward-thinking creator in the tech landscape.    
           </p>
 
         </div>
