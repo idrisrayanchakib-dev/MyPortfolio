@@ -18,24 +18,24 @@ export const MobileFab = () => {
     <div className="lg:hidden fixed bottom-4 right-6 z-50">
       {/* Extra menu items */}
       <div
-        className={`flex flex-col items-center mb-5 space-y-8 transition-all duration-300 ${
+        className={`flex flex-col items-center mb-5 space-y-6 transition-all duration-300 ${
           open
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-5 pointer-events-none"
         }`}
       >
         {/* About Me */}
-        <button
+      <button
           onClick={() => scrollTo("about")}
-          className="flex items-center justify-center  text-white transition"
+          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
         >
-          <User size={20} />
-        </button>
+        <User size={20} />
+      </button>
 
         {/* My Skills */}
         <button
           onClick={() => scrollTo("skill")}
-          className="flex items-center justify-center  text-white transition"
+          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
         >
           <Wrench size={20} />
         </button>
@@ -44,7 +44,7 @@ export const MobileFab = () => {
         {/* My Projects */}
         <button
           onClick={() => scrollTo("projects")}
-          className="flex items-center justify-center  text-white   transition"
+          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
         >
           <Folder size={20} />
         </button>
@@ -52,7 +52,7 @@ export const MobileFab = () => {
         {/* My Experience */}
         <button
           onClick={() => scrollTo("experience")}
-          className="flex items-center justify-center text-white transition"
+          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
         >
           <Briefcase size={20} />
         </button>
@@ -61,9 +61,8 @@ export const MobileFab = () => {
       {/* Main Floating Action Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-12 h-12 flex items-center justify-center rounded-full text-white shadow-lg transition"
-         style={{ backgroundColor: "#1f51ff" }} 
-      >
+        className="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-950 text-white shadow-lg transition"
+        >
         <Plus
           className={`transition-transform duration-300 ${
             open ? "rotate-45" : ""

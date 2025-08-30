@@ -55,14 +55,13 @@ export const ContactSection = () => {
 
   return (
     <section id="contact" className="py-16 px-6 scroll-mt-16">
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="max-w-2xl mx-auto text-center ">
        
        <h2 className="text-3xl md:text-5xl font-bold ">Get In Touch</h2>
 
         {/* Contact Form */}
-        <Card className="p-10 border border-white/30 mt-12 "
+        <Card className="p-10 border border-white/30 mt-12 mb-8 "
         style={{
-          height: "600px",
           boxShadow: "0 0 15px 3px rgba(0, 173, 255, 0.7), 0 0 30px 6px rgba(0, 173, 255, 0.4)",
           border: "1px solid rgba(0, 173, 255, 0.6)"
          }}
@@ -130,7 +129,7 @@ export const ContactSection = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full font-mono bg-cyan-500 text-black hover:bg-cyan-400 shadow-[0_0_10px_rgba(0,173,255,0.7)]"
+                className="w-full font-normal bg-cyan-500 text-gray-900 hover:bg-cyan-400 shadow-[0_0_10px_rgba(0,173,255,0.7)]"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Submit"}
@@ -184,6 +183,11 @@ export const ContactSection = () => {
            )}
         </Card>
       </div>
+
+          {/* Footer fixed at bottom */}
+    <div className="absolute left-0 bottom-0 text-sm  w-full bg-gray-900 text-gray-300 text-center py-1.5 shadow-[0_-2px_8px_rgba(0,173,255,0.3)] ">
+      © 2025 Idris Rayan Chakib. All rights reserved.
+   </div>
     </section>
   );
 };
