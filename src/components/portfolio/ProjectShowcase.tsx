@@ -101,7 +101,7 @@ export const ProjectShowcase = () => {
       <div className="w-full mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 ">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 ">
+          <h2 className="text-5xl md:text-5xl font-bold mb-8 ">
             My projects
           </h2>
         </div>

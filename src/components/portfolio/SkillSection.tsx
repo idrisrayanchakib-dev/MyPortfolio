@@ -48,13 +48,13 @@ import { SiTailwindcss, SiNextdotjs,
 
           {/* skills block */}
           <div className="lg:text-center md:text-center text-center" >
-            <h1 className="text-3xl font-bold  md:text-5xl leading-normal mb-10 md:mb-12 ">My Skills</h1>
+            <h1 className="text-4xl font-bold md:text-5xl leading-normal mb-8 md:mb-12 ">My Skills</h1>
              
-              <h2 className="text-xl font-semibold mt-6 mb-16">Languages I speak</h2>
-           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-8 justify-items-center mb-16">
+              <h2 className="text-3xl font-semibold  mb-6">Languages I speak</h2>
+           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 p-10 gap-8 justify-items-center mb-16">
             {skills.map((skill) => (
               <div key={skill.name} className="flex flex-col items-center">
-                <img src={skill.icon} alt={skill.name} className="w-12 h-12" />
+                <img src={skill.icon} alt={skill.name} className="w-9 h-12" />
                 <p className="mt-2 text-gray-300">{skill.name}</p>                              
               </div>
             ))}
@@ -62,7 +62,7 @@ import { SiTailwindcss, SiNextdotjs,
           {/* infinite scroll row */}
          <div className="space-y-12 overflow-hidden relative text-center lg:w-3/4 mx-auto ">
 
-          <h2 className="pt-10 text-xl font-semibold mb-20">Frameworks & Libraries I master</h2>
+          <h2 className="pt-10 text-3xl font-semibold mb-20">Frameworks & Libraries I master</h2>
   {/* FrontEnd Framework */}
    <InfiniteScroll direction="left" desktopSpeed={15} mobileSpeed={25}>
             {frontendFrameworks.map((f) => f.icon)}

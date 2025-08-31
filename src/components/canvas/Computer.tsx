@@ -51,7 +51,7 @@ const ComputersCanvas = () => {
   if (!dimensions) return null; // prevent SSR mismatch
 
   return (
-    <div className="w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[700px]">
+    <div className="w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[600px]">
       <Canvas
         shadows
         dpr={[1, 2]}

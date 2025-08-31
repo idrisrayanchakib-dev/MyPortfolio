@@ -57,13 +57,13 @@ export const ContactSection = () => {
     <section id="contact" className="py-16 px-6 scroll-mt-16">
       <div className="max-w-2xl mx-auto text-center ">
        
-       <h2 className="text-3xl md:text-5xl font-bold ">Get In Touch</h2>
+       <h2 className="text-5xl md:text-5xl font-bold mb-14 ">Get In Touch</h2>
 
         {/* Contact Form */}
-        <Card className="p-10 border border-white/30 mt-12 mb-8 "
+        <Card className="p-10 border border-white/30 mt-12 mb-16 "
         style={{
-          boxShadow: "0 0 15px 3px rgba(0, 173, 255, 0.7), 0 0 30px 6px rgba(0, 173, 255, 0.4)",
-          border: "1px solid rgba(0, 173, 255, 0.6)"
+          boxShadow: "0 0 10px 0px rgba(0, 255, 255, 0.7), 0 0 18px 0px rgba(0, 255, 255, 0.4)",
+         border: "1px solid rgba(0, 255, 255, 0.6)"
          }}
         >
           <form
@@ -129,7 +129,7 @@ export const ContactSection = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full font-normal bg-cyan-500 text-gray-900 hover:bg-cyan-400 shadow-[0_0_10px_rgba(0,173,255,0.7)]"
+                className="w-full font-normal bg-cyan-500 text-gray-900 hover:bg-cyan-400 "
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Submit"}
@@ -140,7 +140,7 @@ export const ContactSection = () => {
             {/* Social icons */}
 <div className="flex justify-center gap-6">
   <a
-    href="https://github.com/yourusername"
+    href="https://github.com/idrisrayanchakib-dev"
     target="_blank"
     rel="noopener noreferrer"
     className="text-white/80 hover:text-cyan-400 transition-colors"
@@ -148,7 +148,7 @@ export const ContactSection = () => {
     <Github size={24} />
   </a>
   <a
-    href="https://www.linkedin.com/in/yourprofile"
+    href="https://www.linkedin.com/in/rayan-chakib-idris-5999a2381"
     target="_blank"
     rel="noopener noreferrer"
     className="text-white/80 hover:text-cyan-400 transition-colors"
@@ -156,7 +156,7 @@ export const ContactSection = () => {
     <Linkedin size={24} />
   </a>
    <a
-    href="https://x.com/yourusername"
+    href="https://x.com/RayanChakibIds"
     target="_blank"
     rel="noopener noreferrer"
     className="text-white/80 hover:text-cyan-400 transition-colors"
@@ -185,7 +185,7 @@ export const ContactSection = () => {
       </div>
 
           {/* Footer fixed at bottom */}
-    <div className="absolute left-0 bottom-0 text-sm  w-full bg-gray-900 text-gray-300 text-center py-1.5 shadow-[0_-2px_8px_rgba(0,173,255,0.3)] ">
+    <div className="absolute left-0 bottom-0 text-sm  w-full bg-gray-700/50 text-foreground/80 text-center py-3 ">
       © 2025 Idris Rayan Chakib. All rights reserved.
    </div>
     </section>

@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { Plus, User, Folder, Wrench, Briefcase } from "lucide-react"; 
 export const MobileFab = () => {
-  const [open, setOpen] = useState(false);
+const [open, setOpen] = useState(false);
 
-
-
-
-  
 
   // Scroll helper
   const scrollTo = (id: string) => {
@@ -61,7 +57,7 @@ export const MobileFab = () => {
       {/* Main Floating Action Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-950 text-white shadow-lg transition"
+        className="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-950 text-white shadow-lg transition"
         >
         <Plus
           className={`transition-transform duration-300 ${

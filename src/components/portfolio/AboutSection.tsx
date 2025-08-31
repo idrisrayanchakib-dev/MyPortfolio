@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const typewriterTexts = [
   "Data & AI Software Engineer",
   "Machine Learning Problem Solver", 
-  "Data Processing Expert",
+  "Data Processing Enthusiast",
   "Building Intelligent Systems & Projects"
 ];
 
@@ -56,19 +56,16 @@ const [currentText, setCurrentText] = useState(0);
     >
 
       {/* Content Wrapper */}
-      <div className="relative z-10 w-full px-6  flex flex-col md:flex-none lg:flex-col justify-between items-center mt-20 gap-12">
+      <div className="relative z-10 w-full px-6  flex flex-col md:flex-none lg:flex-col justify-between items-center mt-10 gap-12">
         
         {/* LEFT: About Text */}
         <div className=" flex-1 md:text-center lg:text-center lg:pb-10 md:pl-0">
           {/* Title */}
-          <div className="md:pt-5 animate-scale-in">
-            <div className="mb-3">
-              <h1 className="md:text-5xl md:text-center lg:text-center text-center font-bold text-3xl ">
+          <div className="md:pt-5 animate-scale-in">       
+              <h1 className="md:text-6xl md:text-center lg:text-center text-center font-bold text-5xl ">
                 <span className="leading-normal">About Me </span>
               </h1>
-            </div>
-             
-            
+                         
           </div>
 
          {/* Typewriter Effect */}
@@ -79,8 +76,8 @@ const [currentText, setCurrentText] = useState(0);
         </div>
 
           {/* Body Text */}
-          <p className="text-lg  max-w-3xl text-foreground/80 md:text-left lg:text-center leading-relaxed">
-            I'm a passionate Software Engineer and Data enthusiast, fascinated by thge power of information and intelligent systems. I love transforming raw data into actionable insights and building innovative applications that solve real-world problems. My journey revolves around exploring the world of Machine Learning, Data Processing, and AI, while continuously challenging myself to learn, create, and push the boundaries of technology. My ultimate goal is to design impactful solutions and carve a space as a forward-thinking creator in the tech landscape.    
+          <p className="text-lg  max-w-3xl text-foreground/80 md:text-left lg:text-center leading-relaxed mt-8">
+            I'm a passionate Software Engineer and Data enthusiast, fascinated by the power of information and intelligent systems. I love transforming raw data into actionable insights and building innovative applications that solve real-world problems. My journey revolves around exploring the world of Machine Learning, Data Processing, and AI, while continuously challenging myself to learn, create, and push the boundaries of technology. My ultimate goal is to design impactful solutions and carve a space as a forward-thinking creator in the tech landscape.    
           </p>
 
         </div>

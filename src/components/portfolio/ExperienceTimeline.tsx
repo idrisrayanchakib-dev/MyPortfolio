@@ -67,7 +67,7 @@ export const ExperienceTimeline = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-5xl md:text-5xl font-bold mb-4">
             My Experience
           </h2>
         </div>
