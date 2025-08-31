@@ -47,8 +47,8 @@ import { SiTailwindcss, SiNextdotjs,
          
 
           {/* skills block */}
-          <div className="lg:text-center md:text-center text-center" >
-            <h1 className="text-4xl font-bold md:text-5xl leading-normal mb-8 md:mb-12 ">My Skills</h1>
+          <div className="lg:text-center md:text-center text-center " >
+            <h1 className="text-5xl font-bold md:text-5xl leading-normal mb-6 md:mb-12 ">My Skills</h1>
              
               <h2 className="text-3xl font-semibold  mb-6">Languages I speak</h2>
            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 p-10 gap-8 justify-items-center mb-16">
