@@ -11,7 +11,6 @@ import { SiTailwindcss, SiNextdotjs,
       { name: "CSS3", icon: "./icons/css3.svg"},
       { name: "JavaScript", icon: "./icons/javascript.svg"},
       { name: "TypeScript", icon: "./icons/typescript.svg"},
-      { name: "PHP", icon: "./icons/php.svg"},
       { name: "Java", icon: "./icons/java.svg"},
       { name: "C", icon: "./icons/c.svg"},
       { name: "C++", icon: "./icons/cplusplus.svg"},
@@ -43,14 +42,14 @@ import { SiTailwindcss, SiNextdotjs,
 
 
   return (
-    <section id="skill" className="min-h-screen text-white lg:mt-0 md:mt-0 scroll-mt-32">
+    <section id="skill" className="min-h-screen text-white md:mt-16 mt-20 lg:mt-0  scroll-mt-32">
          
 
           {/* skills block */}
           <div className="lg:text-center md:text-center text-center " >
-            <h1 className="text-5xl font-bold md:text-5xl leading-normal mb-6 md:mb-12 ">My Skills</h1>
+            <h1 className="text-5xl font-bold md:text-5xl leading-normal mb-12 md:mb-12 ">My Skills</h1>
              
-              <h2 className="text-3xl font-semibold  mb-6">Languages I speak</h2>
+              <h2 className="text-3xl font-semibold  mb-10">Languages I speak</h2>
            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 p-10 gap-8 justify-items-center mb-16">
             {skills.map((skill) => (
               <div key={skill.name} className="flex flex-col items-center">

@@ -165,6 +165,11 @@ export default {
                   '0%, 100%': { boxShadow: '0 0 5px #00ffff, 0 0 10px #00ffff' },
                   '50%': { boxShadow: '0 0 15px #00ffff, 0 0 15px #00ffff' },
                   },
+				
+				  slideDown: {
+                   "0%": { transform: "translateY(-100px)", opacity: "0" },
+                   "100%": { transform: "translateY(0)", opacity: "1" },
+                  },
 
 			},
 			animation: {
@@ -181,6 +186,7 @@ export default {
 				'scale-in': 'scale-in 0.4s ease-out',
 				'grid-glow': 'grid-glow 3s ease-in-out infinite',
 				'btn-glow': 'button-glow 3s ease-in-out infinite',
+				'slideDown': 'slideDown 1s ease-out forwards'
 
 			},
 		}
