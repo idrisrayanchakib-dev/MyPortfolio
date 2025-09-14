@@ -63,19 +63,19 @@ import { SiTailwindcss, SiNextdotjs,
 
           <h2 className="pt-10 text-3xl font-semibold mb-20">Frameworks & Libraries I master</h2>
   {/* FrontEnd Framework */}
-   <InfiniteScroll direction="left" desktopSpeed={15} mobileSpeed={25}>
+   <InfiniteScroll direction="left" >
             {frontendFrameworks.map((f) => f.icon)}
    </InfiniteScroll>
 
 
   {/* Backend framework */}
-<InfiniteScroll direction="right" desktopSpeed={18} mobileSpeed={28}>
+<InfiniteScroll direction="right" >
     {backendFrameworks.map((f) => f.icon)}
 </InfiniteScroll>
 
 
   {/* Databases */}
-   <InfiniteScroll direction="left" desktopSpeed={15} mobileSpeed={25}>
+   <InfiniteScroll direction="left" >
           {databases.map((f) => f.icon)}
   </InfiniteScroll>
 

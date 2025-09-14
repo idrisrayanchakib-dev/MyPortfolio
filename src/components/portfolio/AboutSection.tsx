@@ -56,7 +56,7 @@ export const AboutSection = () => {
           {/* Title */}
           <div className="md:pt-5 animate-scale-in">       
             <h1 className="text-5xl md:text-6xl font-bold">
-              <span className="leading-normal">About Me</span>
+              <span className="leading-normal ">About Me</span>
             </h1>
           </div>
 
@@ -68,7 +68,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Body Text */}
-          <p className="text-lg max-w-3xl text-foreground/80 text-center lg:text-left leading-relaxed mx-auto lg:mx-0 mt-8">
+          <p className="text-base sm:text-lg leading-relaxed sm:leading-loose max-w-prose sm:max-w-none lg:px-0 px-2 text-justify sm:text-left text-foreground/80">
             I'm a passionate Software Engineer and Data enthusiast, fascinated by the power of information and intelligent systems. 
             I love transforming raw data into actionable insights and building innovative applications that solve real-world problems. 
             My journey revolves around exploring the world of Machine Learning, Data Processing, and AI, while continuously challenging 
@@ -77,18 +77,18 @@ export const AboutSection = () => {
           </p>
         </div>
 
-        {/* RIGHT: Profile Picture */}
-        <div className="flex-shrink-0 lg:mr-20 mt-12">
-          <img 
-            src="/Photo-Chakib.png" 
-            alt="Profile" 
-            className="w-85 h-85 object-cover rounded-full"
-          />
+         <div className="flex-shrink-0 lg:mr-5 mt-6 w-[350px] h-[350px]">
+           <img 
+           src="/Photo-Chakib.png" 
+           alt="Profile" 
+           className="w-full h-full object-cover rounded-full"
+           />
         </div>
+
       </div>
 
       {/* Row 2: Computer */}
-      <div className="w-full flex justify-center mt-16">
+      <div className="w-full flex justify-center mt-6">
         <div className="w-full h-[300px] sm:h-[400px] md:h-[400px] lg:h-[600px]">
           <Computer />
         </div>

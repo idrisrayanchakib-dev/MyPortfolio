@@ -24,66 +24,7 @@ const projects = [
     githubUrl: "#",
     featured: true
   },
-  {
-    id: 2,
-    title: "AI-Powered Code Review Assistant",
-    category: "ml",
-    description: "Machine learning model that automatically reviews code quality, suggests improvements, and detects potential bugs using transformer architecture.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop",
-    techStack: ["PyTorch", "Transformers", "FastAPI", "React", "PostgreSQL", "Docker"],
-    metrics: { accuracy: "94% bug detection", speed: "< 2s analysis", adoption: "500+ developers" },
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Distributed Microservices Platform",
-    category: "fullstack",
-    description: "Scalable e-commerce platform with microservices architecture, event sourcing, and advanced monitoring capabilities.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
-    techStack: ["Node.js", "React", "GraphQL", "MongoDB", "RabbitMQ", "Prometheus"],
-    metrics: { users: "100K+ active users", performance: "< 200ms response", availability: "99.99% SLA" },
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: true
-    
-  },
-  {
-    id: 4,
-    title: "Computer Vision Quality Control",
-    category: "ml",
-    description: "Deep learning system for automated quality inspection in manufacturing, reducing defect rates by 85%.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
-    techStack: ["TensorFlow", "OpenCV", "Python", "FastAPI", "PostgreSQL", "MLflow"],
-    metrics: { accuracy: "98.5% detection", speed: "150ms per item", savings: "$2M annually" },
-    demoUrl: "#",
-    githubUrl: "#",
-    
-  },
-  {
-    id: 5,
-    title: "Blockchain Analytics Dashboard",
-    category: "data",
-    description: "Real-time cryptocurrency transaction analysis platform with advanced visualizations and fraud detection.",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=400&fit=crop",
-    techStack: ["Web3.js", "D3.js", "React", "Node.js", "MongoDB", "Redis"],
-    metrics: { transactions: "1M+ daily", networks: "15 blockchains", users: "50K+ analysts" },
-    demoUrl: "#",
-    githubUrl: "#",
-    
-  },
-  {
-    id: 6,
-    title: "Cloud Infrastructure Orchestrator",
-    category: "fullstack",
-    description: "Infrastructure-as-code platform for automated cloud resource management across multiple providers.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
-    techStack: ["Terraform", "AWS", "React", "Go", "PostgreSQL", "Prometheus"],
-    metrics: { resources: "10K+ managed", efficiency: "60% cost savings", reliability: "99.9% uptime" },
-    demoUrl: "#",
-    githubUrl: "#",
-  }
+  
 ];
 
 export const ProjectShowcase = () => {

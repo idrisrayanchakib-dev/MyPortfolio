@@ -58,9 +58,9 @@ export const ExperienceTimeline = () => {
 
    const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "./EthicalHackerUpdate20250327-27-kuo4k3.pdf";                     // Path to your PDF in public folder
-    link.download = "EthicalHackerUpdate";     // Name for downloaded file
-    link.click();                                  // Trigger automatic download
+    link.href = "./My Resume.pdf";    // Path to your PDF in public folder
+    link.download = "My Resume";     // Name for downloaded file
+    link.click();                                  
   };
   return (
     <section id="experience" className="py-16 px-6 scroll-mt-20">
@@ -190,7 +190,7 @@ export const ExperienceTimeline = () => {
           ))}
         </div>
 
-        {/* 👇 CTA BUTTON GOES HERE, AFTER THE TIMELINE */}
+       
         <div className="text-center mt-16">
           <Button
             variant="cyanGlow"

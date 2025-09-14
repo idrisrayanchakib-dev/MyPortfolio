@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { MobileFab } from "@/components/portfolio/mobile-fab";
-import { motion } from "framer-motion";
+
 
 export const HeroSection = () => {
 
@@ -22,11 +22,11 @@ export const HeroSection = () => {
     
     {/* Right side (Navigation) */}
     <div className="hidden lg:flex items-center space-x-6 nav-links">
-      <a href="#Home" className="text-foreground/80 hover:text-primary transition-colors animated-underline">Home</a>
-      <a href="#about" className="text-foreground/80 hover:text-primary transition-colors animated-underline">About</a>
-      <a href="#skill" className="text-foreground/80 hover:text-primary transition-colors animated-underline">Skills</a>
-      <a href="#projects" className="text-foreground/80 hover:text-primary transition-colors animated-underline">Projects</a>
-      <a href="#experience" className="text-foreground/80 hover:text-primary transition-colors animated-underline">Experience</a>
+      <a onClick={(e) => { e.preventDefault();scrollToSection("Home"); }} href="#Home" className="text-foreground/80 hover:text-primary transition-colors animated-underline cursor-pointer">Home</a>
+      <a  onClick={(e) => { e.preventDefault();scrollToSection("about"); }} href="#about" className="text-foreground/80 hover:text-primary transition-colors animated-underline cursor-pointer">About</a>
+      <a onClick={(e) => { e.preventDefault();scrollToSection("skill"); }} href="#skill" className="text-foreground/80 hover:text-primary transition-colors animated-underline cursor-pointer">Skills</a>
+      <a onClick={(e) => { e.preventDefault();scrollToSection("projects"); }} href="#projects" className="text-foreground/80 hover:text-primary transition-colors animated-underline cursor-pointer">Projects</a>
+      <a onClick={(e) => { e.preventDefault();scrollToSection("experience"); }} href="#experience" className="text-foreground/80 hover:text-primary transition-colors animated-underline cursor-pointer">Experience</a>
     </div>
   </div>
 </div>
