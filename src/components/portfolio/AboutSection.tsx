@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 
 const typewriterTexts = [
   "Data & AI Software Engineer",
-  "Machine Learning Problem Solver", 
+  "ML Problem Solver", 
   "Data Processing Enthusiast",
-  "Building Intelligent Systems & Projects"
+  "Building Intelligent Systems "
 ];
 
 export const AboutSection = () => {
@@ -13,9 +13,9 @@ export const AboutSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const typingSpeed = 50; // ms per character
-  const deletingSpeed = 30; // ms per character
-  const pauseDelay = 2000; // pause after a full word
+  const typingSpeed = 20; // ms per character
+  const deletingSpeed = 25; // ms per character
+  const pauseDelay = 1200; // pause after a full word
 
   useEffect(() => {
     const fullText = typewriterTexts[currentText];
