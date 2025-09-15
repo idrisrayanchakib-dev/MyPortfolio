@@ -185,7 +185,7 @@ export const ContactSection = () => {
       </div>
 
           {/* Footer fixed at bottom */}
-    <div className="absolute left-0 bottom-0 text-sm  w-full bg-gray-700/50 text-foreground/80 text-center py-3 ">
+    <div className="absolute left-0 bottom-0 text-sm  w-full bg-gray-800 text-foreground/80 text-center py-3 ">
       © 2025 Idris Rayan Chakib. All rights reserved.
    </div>
     </section>

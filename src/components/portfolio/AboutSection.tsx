@@ -77,7 +77,11 @@ export const AboutSection = () => {
           </p>
         </div>
 
-         <div className="flex-shrink-0 lg:mr-5 mt-6 w-[350px] h-[350px]">
+         <div className="flex-shrink-0 lg:mr-5 mt-6 
+                w-[280px] h-[280px]   /* default mobile size */
+                sm:w-[280px] sm:h-[280px] 
+                md:w-[300px] md:h-[300px] 
+                lg:w-[350px] lg:h-[350px]">
            <img 
            src="/Photo-Chakib.png" 
            alt="Profile" 
