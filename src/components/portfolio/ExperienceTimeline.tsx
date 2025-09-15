@@ -58,7 +58,7 @@ export const ExperienceTimeline = () => {
 
    const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "./My Resume.pdf";    // Path to your PDF in public folder
+    link.href = "./My Resume.pdf";   // Path to your PDF in public folder
     link.download = "My Resume";     // Name for downloaded file
     link.click();                                  
   };

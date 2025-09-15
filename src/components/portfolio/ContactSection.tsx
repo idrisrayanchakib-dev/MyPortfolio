@@ -110,7 +110,7 @@ export const ContactSection = () => {
             <div className="text-left">
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-white/80 mb-2"
+                className="block text-sm font-medium text-white mb-2"
               >
                 Message
               </label>
@@ -129,7 +129,7 @@ export const ContactSection = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full font-normal bg-cyan-500 text-gray-900 hover:bg-cyan-400 "
+                className="w-full font-normal bg-cyan-500/10 text-cyan-300 border border-cyan-400/30 backdrop-blur-md hover:bg-cyan-500/20 transition "
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Submit"}

@@ -314,61 +314,76 @@
 
 .typing-text {
   display: inline-block;
-  border-right: 2px solid #00D9FF;
+  border-right: 2px solid rgba(0, 255, 255, 0.4); /* softer */
   animation: blink 1s infinite;
 }
 
-
 @keyframes blink {
   0%, 100% { border-color: transparent; }
-  50% { border-color: #00D9FF; }
+  50% { border-color: rgba(0, 255, 255, 0.4); }
 }
+
+
 
 .code-font {
   font-family: 'Fira Code', monospace;
 }
 
-/* Hero Button */
 .btn-super {
   position: relative;
-  background: #111;
-  color: white;
-  padding: 26px 12px;
+  background: #0a0f0f; /* darker base for contrast */
+  color: #e0ffff; /* soft cyan text */
+  padding: 24px 12px;
   border-radius: 16px;
   font-weight: normal;
-  outline: 1px solid rgba(0, 0, 0, 0.847);
-  outline-offset: 3px;  
   cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 0;
+  outline: 2px solid rgba(0, 255, 255, 0.4); /* subtle cyan outline */
+  outline-offset: 3px;
   overflow: hidden;
-  /* Neon glow pulse */
-  animation: glow-pulse 2.5s infinite ease-in-out;
+  z-index: 0;
+  transition: all 0.3s ease;
 }
 
-/* Cyan glowing pulse effect */
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 8px rgba(0, 255, 255, 0.7),
-                0 0 16px rgba(0, 255, 255, 0.5);
-    outline-color: rgba(0, 255, 255, 0.8);
+.btn-super::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 255, 0.05),
+    rgba(0, 255, 255, 0.2),
+    rgba(0, 255, 255, 0.05)
+  );
+  background-size: 200% 200%;
+  z-index: -1;
+  animation: outline-light 2.5s linear infinite;
+}
+
+/* Keyframes for animated outline shimmer */
+@keyframes outline-light {
+  0% {
+    background-position: 0% 50%;
   }
-  50% {
-    box-shadow: 0 0 16px rgba(0, 255, 255, 0.9),
-                0 0 16px rgba(0, 255, 255, 0.6);
-    outline-color: rgba(0, 255, 255, 1);
+  100% {
+    background-position: 200% 50%;
   }
 }
 
 
 
 
+/* Css of the header / Navigation Bar */
 .shadow-glow {
   box-shadow: 
   0 0px 0px rgb(255, 255, 255),
   0 3px 6px rgba(185, 184, 180, 0.19);
 }
 
+/* Infinite row logo css */
 @keyframes marquee-left {
   0% {
     transform: translateX(0);
@@ -386,6 +401,10 @@
     transform: translateX(0);
   }
 }
+
+
+
+
 
 
 

@@ -13,7 +13,7 @@ export const HeroSection = () => {
       
       {/* Header / Navigation */}
      <div className="fixed top-4 inset-x-0 z-40 flex justify-center">
-  <div className="px-24 md:px-20 py-3 rounded-3xl text-white shadow-glow backdrop-blur-sm flex items-center justify-center lg:justify-between w-auto md:w-auto lg:w-full max-w-6xl ">
+  <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 rounded-3xl text-white shadow-glow backdrop-blur-sm flex items-center justify-center lg:justify-between ">
     
     {/* Left side (Name) */}
     <span className="text-lg font-semibold whitespace-nowrap">
@@ -32,26 +32,26 @@ export const HeroSection = () => {
 </div>
 
       {/* Grid background */}
-      <div className="absolute top-20 inset-0 bg-[linear-gradient(to_right,#1f1f1f,transparent_2px),linear-gradient(to_bottom,#1f1f1f,transparent_2px)] [background-size:60px_60px] animate-grid-glow mt-3" />
+      <div className="absolute top-20 inset-0 bg-[linear-gradient(to_right,#1f1f1f,transparent_2px),linear-gradient(to_bottom,#1f1f1f,transparent_2px)] [background-size:60px_60px] animate-grid-diagonal-br-tl mt-3" />
 
       {/* Hero Content */}
       <div className="flex flex-col items-center justify-center flex-1 relative z-30 px-4 text-center">
         
         <h1
-          className="text-4xl md:text-6xl font-bold text-foreground/80 lg:leading-normal md:leading-normal leading-normal animate-slideDown mb-3"
+          className="text-5xl md:text-6xl  text-foreground/80 lg:leading-normal md:leading-normal leading-normal mb-3"
         >
-          <span>Turning Ideas into < br/> Scalable Code!</span> 
+          <span className="font-semibold">Turning Ideas < br /> into Scalable <br /> Code!</span> 
         </h1>
 
         {/* Action Button */}
-        <div className="mt-12">
+        <div className="mt-8">
           <Button
             variant="customSecondary"
             className="text-base sm:text-lg px-6"
             onClick={() => scrollToSection("contact")}
           >
             <span className="text-muted-foreground font-medium">
-              Let's Craft Tomorrow ⚡
+              Let's Code Future 🚀
             </span>
           </Button>
         </div>

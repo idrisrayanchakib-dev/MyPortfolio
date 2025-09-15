@@ -15,7 +15,7 @@ export const AboutSection = () => {
 
   const typingSpeed = 20; // ms per character
   const deletingSpeed = 25; // ms per character
-  const pauseDelay = 1200; // pause after a full word
+  const pauseDelay = 1600; // pause after a full word
 
   useEffect(() => {
     const fullText = typewriterTexts[currentText];
@@ -62,13 +62,13 @@ export const AboutSection = () => {
 
           {/* Typewriter Effect */}
           <div className="flex items-center mb-6 lg:justify-start justify-center">
-            <h2 className="code-font font-normal lg:text-xl md:text-md text-lg text-cyan-300 mt-4">
+            <h2 className=" code-font font-normal lg:text-xl md:text-md text-lg text-gradient-primary mt-4" >
               <span id="typingText" className="typing-text">{displayText}</span>
             </h2>
           </div>
 
           {/* Body Text */}
-          <p className="text-base sm:text-lg leading-relaxed sm:leading-loose max-w-prose sm:max-w-none lg:px-0 px-2 text-justify sm:text-left text-foreground/80">
+          <p className="text-base sm:text-lg leading-relaxed sm:leading-loose max-w-full sm:max-w-none px-4 sm:px-0 text-justify sm:text-justify text-foreground/80">
             I'm a passionate Software Engineer and Data enthusiast, fascinated by the power of information and intelligent systems. 
             I love transforming raw data into actionable insights and building innovative applications that solve real-world problems. 
             My journey revolves around exploring the world of Machine Learning, Data Processing, and AI, while continuously challenging 
@@ -89,7 +89,7 @@ export const AboutSection = () => {
 
       {/* Row 2: Computer */}
       <div className="w-full flex justify-center mt-6">
-        <div className="w-full h-[300px] sm:h-[400px] md:h-[400px] lg:h-[600px]">
+        <div className="w-full mt-5">
           <Computer />
         </div>
       </div>

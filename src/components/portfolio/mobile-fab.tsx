@@ -3,6 +3,14 @@ import { Plus, User, Folder, Wrench, Briefcase } from "lucide-react";
 export const MobileFab = () => {
 const [open, setOpen] = useState(false);
 
+   // Changed State of the Button when clicked 
+   const [shake, setShake] = useState(false);
+
+   const handleClick = () => {
+     setShake(true);
+     setTimeout(() => setShake(false), 300); // reset after animation
+     setOpen(!open);
+   };
 
   // Scroll helper
   const scrollTo = (id: string) => {
@@ -23,7 +31,7 @@ const [open, setOpen] = useState(false);
         {/* About Me */}
       <button
           onClick={() => scrollTo("about")}
-          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
+          className="flex items-center justify-center bg-cyan-500/10 backdrop-blur-xl text-cyan-300 rounded-full p-2 hover:bg-cyan-500/20 transition"
         >
         <User size={20} />
       </button>
@@ -31,7 +39,7 @@ const [open, setOpen] = useState(false);
         {/* My Skills */}
         <button
           onClick={() => scrollTo("skill")}
-          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
+          className="flex items-center justify-center bg-cyan-500/10 backdrop-blur-xl text-cyan-300 rounded-full p-2 hover:bg-cyan-500/20 transition"
         >
           <Wrench size={20} />
         </button>
@@ -40,7 +48,7 @@ const [open, setOpen] = useState(false);
         {/* My Projects */}
         <button
           onClick={() => scrollTo("projects")}
-          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
+          className="flex items-center justify-center bg-cyan-500/10 backdrop-blur-xl text-cyan-300 rounded-full p-2 hover:bg-cyan-500/20 transition"
         >
           <Folder size={20} />
         </button>
@@ -48,7 +56,7 @@ const [open, setOpen] = useState(false);
         {/* My Experience */}
         <button
           onClick={() => scrollTo("experience")}
-          className="flex items-center justify-center bg-cyan-950 text-white rounded-full p-2 hover:bg-cyan-900 transition"
+          className="flex items-center justify-center bg-cyan-500/10 backdrop-blur-xl text-cyan-300 rounded-full p-2 hover:bg-cyan-500/20 transition"
         >
           <Briefcase size={20} />
         </button>
@@ -56,8 +64,8 @@ const [open, setOpen] = useState(false);
 
       {/* Main Floating Action Button */}
       <button
-        onClick={() => setOpen(!open)}
-        className="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-950 text-white shadow-lg transition"
+        onClick={handleClick}
+        className="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-500/20 backdrop-blur-xl text-cyan-300 shadow-lg transition"
         >
         <Plus
           className={`transition-transform duration-300 ${
