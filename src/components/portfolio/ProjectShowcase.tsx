@@ -14,25 +14,37 @@ const projectCategories = [
 const projects = [
   {
     id: 1,
-    title: "Real-Time Data Pipeline Platform",
-    category: "data",
-    description: "Enterprise-grade streaming data processing system handling 10M+ events/hour with Apache Kafka, Spark, and real-time analytics.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    techStack: ["Apache Kafka", "Spark", "Python", "Docker", "Kubernetes", "Redis"],
-    metrics: { performance: "99.9% uptime", scale: "10M+ events/hour", impact: "40% cost reduction" },
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Moogle Search Engine",
+    category: "ml",
+    description: "An intelligent search engine leveraging TF-IDF ranking, stemming & unstemming, and Bi-gram analysis for accurate document retrieval and relevance scoring.",
+    image: "/moogle-cover.jpg",
+    techStack: ["Python", "TF-IDF", "Stemming", "Bi-gram", "Flask", "HTML/CSS/JS", "Vercel"],
+    metrics: { performance: "Fast retrieval", scale: "NLP-powered", impact: "Deployed on Vercel" },
+    demoUrl: "https://moogle-search.vercel.app",
+    githubUrl: "https://github.com/idrisrayanchakib-dev/moogle-search",
     featured: true
   },
-  
+  {
+    id: 2,
+    title: "Multi-Robot Autonomous Swarm Exploration",
+    category: "ml",
+    description: "Autonomous multi-robot swarm system using A* pathfinding with a Teacher-Student strategy powered by Deep Q-Network (DQN), imitation learning, and negative transfer learning for coordinated environment exploration.",
+    image: "/swarm-cover.jpg",
+    techStack: ["Python", "A* Algorithm", "DQN", "Imitation Learning", "Pygame", "Three.js", "Flask", "Render"],
+    metrics: { performance: "Real-time coordination", scale: "Multi-agent swarm", impact: "2D & 3D simulation" },
+    demoUrl: "https://intelligence-swarm-2d.onrender.com",
+    githubUrl: "https://github.com/idrisrayanchakib-dev/intelligence-swarm-3D",
+    featured: true
+  },
 ];
+
 
 export const ProjectShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeCTA, setActiveCTA] = useState<string | null>(null);
-  const filteredProjects = activeCategory === 'all' 
-    ? projects 
+  const filteredProjects = activeCategory === 'all'
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
   const featuredProjects = projects.filter(project => project.featured);
@@ -56,11 +68,10 @@ export const ProjectShowcase = () => {
                 key={category.id}
                 variant={activeCategory === category.id ? "default" : "cyanGlow"}
                 onClick={() => setActiveCategory(category.id)}
-                className={`glass-card ${
-                  activeCategory === category.id 
-                    ? 'bg-gradient-primary text-primary-foreground' 
-                    : 'hover-glow'
-                }`}
+                className={`glass-card ${activeCategory === category.id
+                  ? 'bg-gradient-primary text-primary-foreground'
+                  : 'hover-glow'
+                  }`}
               >
                 <Icon className="h-4 w-4 mr-2" />
                 {category.label}
@@ -71,19 +82,20 @@ export const ProjectShowcase = () => {
 
         {/* All Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className="project-card group animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'both' }}
-              >
-                <div className="relative overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className="project-card group animate-fade-in"
+              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'both' }}
+            >
+              <div className="relative overflow-hidden rounded-lg mb-6">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="sm"
                     className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 glass-button"
@@ -91,20 +103,25 @@ export const ProjectShowcase = () => {
                     <Play className="h-4 w-4 mr-2" />
                     Demo
                   </Button>
-                </div>
+                </a>
+              </div>
 
-              <CardHeader> 
+              <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <Badge variant="secondary" className="glass-card">
                     {projectCategories.find(cat => cat.id === project.category)?.label}
                   </Badge>
                   <div className="flex space-x-2">
-                    <Button variant="ghost" size="sm" className="p-2 hover-glow">
-                      <Github className="h-4 w-4" />
-                    </Button>
-                    <Button variant="ghost" size="sm" className="p-2 hover-glow">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="ghost" size="sm" className="p-2 hover-glow">
+                        <Github className="h-4 w-4" />
+                      </Button>
+                    </a>
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="ghost" size="sm" className="p-2 hover-glow">
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
                 <CardTitle className="group-hover:text-primary transition-colors">
