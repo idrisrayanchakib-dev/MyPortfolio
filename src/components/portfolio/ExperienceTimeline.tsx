@@ -45,22 +45,49 @@ const experiences = [
       "Expressjs",
       "MySQL"
     ],
-    metrics: {
-      impact: "40% performance improvement",
-      team: "8 engineers managed",
-      scale: "1M+ users served",
-    },
+  },
+  {
+    id: 2,
+    company: "Institut Pasteur",
+    logo: "/Institut-Pasteur-Logo.jpeg",
+    position: "Machine Learning Research Engineer — Drug Discovery / Computational Biology",
+    location: "El Hamma, Alger",
+    period: "15/02/2026 - 30/06/2026",
+    type: " Internship",
+    description:
+      "Designed and trained AEGIS-GT (Affinity Evaluation Geometric Transformer Induced Fit Screening), a custom ~23 Million parameters geometric transformer that predicts how cancer-driving protein mutations alter drug-binding affinity. Built the entire pipeline from scratch, curating and validating a multi-million-pair dataset from six public bio/chem databases, generating 3D protein and ligand structures, and training a novel multi-task architecture in two phases (physics pretraining → clinical fine-tuning).",
+    achievements: [
+      "Curated and validated a 1.67M-pair oncology drug-target dataset by cross-referencing BindingDB, COSMIC, OncoKB, and IntOGen, filtering out chemical assay artifacts (PAINS) with 95.9% purity",
+      "Physically validated 5,920 cancer-driving mutations across 971 genes by cross confirming COSMIC and ClinVar against real protein sequences",
+      "Generated 3D protein structures (ESMFold + FoldX) and computed biophysical mutation impact metrics (ΔΔG, SASA, packing, RMSD) for every validated variant",
+      "Designed a novel geometric transformer architecture (RMSNorm/SwiGLU blocks, learnable radial basis functions, cross-attention fusion, gated pooling) from scratch, ~23M trainable parameters",
+      "Implemented uncertainty weighted multi-task loss (Kendall et al., CVPR 2018) and a custom gene-aware pairwise ranking loss",
+      "Built a two-phase transfer learning pipeline: structural pretraining followed by fine-tuning on 16,431 real experimental affinity measurements, reaching test Pearson r = 0.31 and Spearman p = 0.13",
+      "Engineered memory efficient infrastructure to handle 900M+ molecular graph edges via memory-mapped tensors, enabling training at scale on Blackwell server edition GPU"
+    ],
+    technologies: [
+      "Python",
+      "PyTorch",
+      "PyTorch Geometric",
+      "RDKit",
+      "ESM-2 / ESMFold",
+      "FoldX",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "CUDA"
+    ],
   },
 ];
 
 export const ExperienceTimeline = () => {
   const [activeCTA, setActiveCTA] = React.useState<string | null>(null);
 
-   const handleDownload = () => {
+  const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "./My Resume.pdf";   // Path to your PDF in public folder
     link.download = "My Resume";     // Name for downloaded file
-    link.click();                                  
+    link.click();
   };
   return (
     <section id="experience" className="py-16 px-6 scroll-mt-20">
@@ -81,7 +108,7 @@ export const ExperienceTimeline = () => {
             <div
               key={experience.id}
               className={`relative mb-20 ${
-                index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:text-right"
+                index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2"
               }`}
             >
               {/* Timeline node */}
@@ -93,27 +120,19 @@ export const ExperienceTimeline = () => {
                   index % 2 === 0 ? "md:mr-8" : "md:ml-8"
                 }`}
               >
-                <Card className="bg-background transition duration-300">
-                  <CardHeader>
-                    <div
-                      className={`flex items-center gap-4 ${
-                        index % 2 === 0 ? "" : "md:flex-row-reverse"
-                      }`}
-                    >
+                <Card className="bg-background transition duration-300 text-left">
+                  <CardHeader className="text-left">
+                    <div className="flex items-center gap-4">
                       <img
                         src={experience.logo}
                         alt={`${experience.company} logo`}
                         className="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20"
                       />
-                      <div
-                        className={`flex-1 ${
-                          index % 2 === 0 ? "" : "md:text-right"
-                        }`}
-                      >
-                        <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
+                      <div className="flex-1 text-left">
+                        <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors text-left">
                           {experience.position}
                         </CardTitle>
-                        <div className="flex items-center gap-2 text-muted-foreground mt-1">
+                        <div className="flex items-center gap-2 text-muted-foreground mt-1 text-left">
                           <Building className="h-4 w-4" />
                           <span className="font-medium">
                             {experience.company}
@@ -122,11 +141,7 @@ export const ExperienceTimeline = () => {
                       </div>
                     </div>
 
-                    <div
-                      className={`flex items-center gap-6 text-sm text-muted-foreground mt-4 ${
-                        index % 2 === 0 ? "" : "md:justify-end"
-                      }`}
-                    >
+                    <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mt-4 text-left">
                       <div className="flex items-center gap-1 min-w-0">
                         <Calendar className="h-4 w-4 flex-shrink-0" />
                         <time className="truncate">{experience.period}</time>
@@ -139,35 +154,34 @@ export const ExperienceTimeline = () => {
                     </div>
                   </CardHeader>
 
-                  <CardContent className="space-y-6">
+                  <CardContent className="space-y-6 text-left">
                     {/* Description */}
-                    <p className="text-foreground/80 leading-relaxed">
+                    <p className="text-foreground/80 leading-relaxed text-left">
                       {experience.description}
                     </p>
 
-
                     {/* Achievements */}
-                    <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                    <div className="text-left">
+                      <h4 className="font-semibold mb-3 flex items-center gap-2 text-left">
                         <TrendingUp className="h-4 w-4 text-success" />
                         Key Achievements
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="space-y-2 text-left">
                         {experience.achievements.map((achievement, idx) => (
                           <li
                             key={idx}
-                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                            className="flex items-start gap-2 text-sm text-muted-foreground text-left"
                           >
                             <span className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0" />
-                            {achievement}
+                            <span className="text-left">{achievement}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* Technologies */}
-                    <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                    <div className="text-left">
+                      <h4 className="font-semibold mb-3 flex items-center gap-2 text-left">
                         <Code className="h-4 w-4 text-primary" />
                         Technologies Used
                       </h4>
@@ -190,23 +204,22 @@ export const ExperienceTimeline = () => {
           ))}
         </div>
 
-       
+
         <div className="text-center mt-16">
           <Button
             variant="cyanGlow"
             size="lg"
-            className={`glass-card ${
-              activeCTA === "cert"
-                ? "bg-gradient-primary text-primary-foreground hover:shadow-none"
-                : ""
-            }`}
+            className={`glass-card ${activeCTA === "cert"
+              ? "bg-gradient-primary text-primary-foreground hover:shadow-none"
+              : ""
+              }`}
             onClick={handleDownload}
           >
             Download full resume
             <Download className="w-5 h-5" />
           </Button>
         </div>
-     </div>
+      </div>
     </section>
   );
 };
