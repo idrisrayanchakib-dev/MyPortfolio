@@ -157,8 +157,8 @@ export default {
 				},
 
 				'grid-diagonal-br-tl': {
-                 '0%': { backgroundPosition: '100% 100%' }, // bottom-right
-                 '100%': { backgroundPosition: '0 0' },     // top-left
+                 '0%': { transform: 'translate(0, 0)' },
+                 '100%': { transform: 'translate(-60px, -60px)' },
                  },
 
 				'button-glow': {
@@ -184,7 +184,7 @@ export default {
 				'slide-in-left': 'slide-in-left 0.5s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'scale-in': 'scale-in 0.4s ease-out',
-				 'grid-diagonal-br-tl': 'grid-diagonal-br-tl 8s linear infinite',
+				 'grid-diagonal-br-tl': 'grid-diagonal-br-tl 6s linear infinite',
 				'btn-glow': 'button-glow 3s ease-in-out infinite',
 				'slideDown': 'slideDown 1s ease-out forwards',
 			},

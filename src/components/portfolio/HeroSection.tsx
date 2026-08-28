@@ -32,7 +32,10 @@ export const HeroSection = () => {
 </div>
 
       {/* Grid background */}
-      <div className="absolute top-20 inset-0 bg-[linear-gradient(to_right,#1f1f1f,transparent_2px),linear-gradient(to_bottom,#1f1f1f,transparent_2px)] [background-size:60px_60px] animate-grid-diagonal-br-tl mt-3" />
+      <div
+        className="absolute top-20 inset-0 bg-[linear-gradient(to_right,#1f1f1f,transparent_2px),linear-gradient(to_bottom,#1f1f1f,transparent_2px)] [background-size:60px_60px] animate-grid-diagonal-br-tl mt-3"
+        style={{ willChange: 'transform', contain: 'strict' }}
+      />
 
       {/* Hero Content */}
       <div className="flex flex-col items-center justify-center flex-1 relative z-30 px-4 text-center">
@@ -44,16 +47,27 @@ export const HeroSection = () => {
         </h1>
 
         {/* Action Button */}
-        <div className="mt-8">
-          <Button
-            variant="customSecondary"
-            className="text-base sm:text-lg px-6"
+        <div className="mt-8 flex justify-center">
+          <button
+            type="button"
+            className="electric-border-btn group"
             onClick={() => scrollToSection("contact")}
           >
-            <span className="text-muted-foreground font-medium">
-              Let's Code Future 🚀
+            {/* Ambient blur glow */}
+            <span className="electric-glow" />
+            {/* Sharp electric rotating beam */}
+            <span className="electric-beam" />
+            
+            {/* Inner Content */}
+            <span className="electric-content">
+              <span className="bg-gradient-to-r from-white via-cyan-100 to-cyan-300 bg-clip-text text-transparent font-semibold">
+                Build the Future Together
+              </span>
+              <span className="inline-block text-xl transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
+                ⚡
+              </span>
             </span>
-          </Button>
+          </button>
         </div>
       </div>
 

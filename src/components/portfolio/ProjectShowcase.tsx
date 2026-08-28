@@ -36,6 +36,18 @@ const projects = [
     githubUrl: "https://github.com/idrisrayanchakib-dev/intelligence-swarm-3D",
     featured: true
   },
+  {
+    id: 3,
+    title: "NEXUS P2P: Distributed Consensus Engine",
+    category: "fullstack",
+    description: "An enterprise-grade serverless peer-to-peer messaging and consensus engine. Features Lamport logical clocks for causal ordering, PBKDF2HMAC zero-knowledge Fernet cryptography, UDP LAN auto-discovery, chunked binary file streaming (32 KB / SHA-256), and failover voting consensus.",
+    image: "/nexus-p2p-cover.jpg",
+    techStack: ["Python", "TCP/UDP Sockets", "Lamport Clocks", "PBKDF2HMAC", "Fernet Cryptography", "SQLite", "P2P Consensus", "Vercel"],
+    metrics: { performance: "< 1ms Local Latency", scale: "100% Serverless Mesh", impact: "Zero-Knowledge E2EE" },
+    demoUrl: "https://nexus-distributed-system.vercel.app",
+    githubUrl: "https://github.com/idrisrayanchakib-dev/nexus-distributed-system",
+    featured: true
+  },
 ];
 
 

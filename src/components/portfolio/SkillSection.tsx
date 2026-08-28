@@ -1,3 +1,4 @@
+import React from "react";
 import InfiniteScroll from "./InfiniteScroll";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, 
@@ -59,24 +60,30 @@ import { SiTailwindcss, SiNextdotjs,
             ))}
            </div>
           {/* infinite scroll row */}
-         <div className="space-y-12 overflow-hidden relative text-center lg:w-3/4 mx-auto ">
+         <div className="space-y-12 overflow-hidden relative text-center w-full">
 
           <h2 className="pt-10 text-3xl font-semibold mb-20">Frameworks & Libraries I master</h2>
   {/* FrontEnd Framework */}
    <InfiniteScroll direction="left" >
-            {frontendFrameworks.map((f) => f.icon)}
+            {frontendFrameworks.map((f) => (
+              <React.Fragment key={f.name}>{f.icon}</React.Fragment>
+            ))}
    </InfiniteScroll>
 
 
   {/* Backend framework */}
 <InfiniteScroll direction="right" >
-    {backendFrameworks.map((f) => f.icon)}
+    {backendFrameworks.map((f) => (
+      <React.Fragment key={f.name}>{f.icon}</React.Fragment>
+    ))}
 </InfiniteScroll>
 
 
   {/* Databases */}
    <InfiniteScroll direction="left" >
-          {databases.map((f) => f.icon)}
+          {databases.map((f) => (
+            <React.Fragment key={f.name}>{f.icon}</React.Fragment>
+          ))}
   </InfiniteScroll>
 
 </div>

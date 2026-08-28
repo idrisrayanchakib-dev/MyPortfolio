@@ -118,7 +118,9 @@
   .glass-button {
     @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium;
     @apply bg-gradient-to-r from-primary to-accent text-primary-foreground;
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-glow;
+    @apply hover:scale-105 hover:shadow-glow;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
     @apply before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700;
   }
@@ -127,7 +129,7 @@
   background: linear-gradient(45deg, #00D9FF, #0099CC);
   color: #0A1628;
   box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -139,7 +141,7 @@
   background: transparent;
   color: #F5F7FA;
   border: 2px solid rgba(245, 247, 250, 0.3);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -161,6 +163,8 @@
   border-radius: 50%;
   opacity: 0;
   animation: float 8s infinite ease-in-out;
+  will-change: transform, opacity;
+  contain: strict;
 }
 
 @keyframes float {
@@ -172,11 +176,15 @@
 
   /* Hover Effects */
   .hover-lift {
-    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-premium;
+    @apply hover:translate-y-[-4px] hover:shadow-premium;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-glow hover:border-primary/50;
+    @apply hover:shadow-glow hover:border-primary/50;
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
 
@@ -301,8 +309,8 @@
         }
 
 @keyframes titleGlow {
-  0% { filter: brightness(1) }
-  100% { filter: brightness(2) } /* instead of 1.5 or more */
+  0%   { opacity: 0.65; }
+  100% { opacity: 1; }
 }
 
 .hero-subtitle {
@@ -329,48 +337,157 @@
   font-family: 'Fira Code', monospace;
 }
 
+/* =========================================================
+   ELECTRIC BORDER BEAM BUTTON
+   ========================================================= */
+@keyframes electric-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.electric-border-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 9999px;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.2), 0 8px 24px rgba(0, 0, 0, 0.5);
+  will-change: transform;
+}
+
+.electric-border-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 35px rgba(0, 217, 255, 0.5), 0 0 70px rgba(0, 153, 204, 0.3), 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.electric-border-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.electric-beam {
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    rgba(0, 217, 255, 0.3) 310deg,
+    #00d9ff 335deg,
+    #ffffff 352deg,
+    #00d9ff 360deg
+  );
+  animation: electric-spin 2.8s linear infinite;
+  pointer-events: none;
+  will-change: transform;
+  contain: layout style;
+}
+
+.electric-glow {
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 270deg,
+    rgba(0, 217, 255, 0.4) 310deg,
+    #00ffff 345deg,
+    #38bdf8 360deg
+  );
+  filter: blur(8px);
+  opacity: 0.75;
+  animation: electric-spin 2.8s linear infinite;
+  pointer-events: none;
+  will-change: transform;
+  contain: layout style;
+}
+
+.electric-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 14px 34px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #09121d 0%, #050a11 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.electric-border-btn:hover .electric-content {
+  background: linear-gradient(180deg, #0e1c2c 0%, #070e17 100%);
+  color: #ffffff;
+  border-color: rgba(0, 217, 255, 0.35);
+}
+
+.electric-border-btn:hover .electric-beam,
+.electric-border-btn:hover .electric-glow {
+  opacity: 1;
+}
+
 .btn-super {
   position: relative;
-  background: #0a0f0f; /* darker base for contrast */
-  color: #e0ffff; /* soft cyan text */
+  background: #0a0f0f;
+  color: #e0ffff;
   padding: 24px 12px;
   border-radius: 16px;
   font-weight: normal;
   cursor: pointer;
-  outline: 2px solid rgba(0, 255, 255, 0.4); /* subtle cyan outline */
+  outline: 2px solid rgba(0, 255, 255, 0.4);
   outline-offset: 3px;
   overflow: hidden;
   z-index: 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-super::before {
   content: '';
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+  inset: -3px;
   border-radius: inherit;
   background: linear-gradient(
     90deg,
-    rgba(0, 255, 255, 0.05),
-    rgba(0, 255, 255, 0.2),
-    rgba(0, 255, 255, 0.05)
+    transparent 0%,
+    rgba(0, 255, 255, 0.25) 50%,
+    transparent 100%
   );
-  background-size: 200% 200%;
   z-index: -1;
+  /* GPU-composited shimmer via transform instead of background-position */
+  transform: translateX(-100%);
   animation: outline-light 2.5s linear infinite;
+  will-change: transform;
 }
 
-/* Keyframes for animated outline shimmer */
+/* Shimmer uses translateX — fully GPU composited */
 @keyframes outline-light {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 

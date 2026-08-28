@@ -2,10 +2,9 @@ import Computer from "@/components/canvas/Computer"
 import { useEffect, useState } from 'react';
 
 const typewriterTexts = [
-  "Data & AI Software Engineer",
-  "ML Problem Solver", 
-  "Data Processing Enthusiast",
-  "Building Intelligent Systems "
+  "Machine Learning Researcher",
+  "Deep Learning & AI Scientist",
+  "Deep Reinforcement Learning Specialist"
 ];
 
 export const AboutSection = () => {
@@ -50,11 +49,11 @@ export const AboutSection = () => {
     >
       {/* Row 1: Text + Profile */}
       <div className="relative z-10 w-full px-6 flex flex-col lg:flex-row items-center justify-between mt-10 gap-12">
-        
+
         {/* LEFT: About Text */}
         <div className="flex-1 w-full text-center lg:text-left lg:pl-5 lg:pb-10 md:pl-0">
           {/* Title */}
-          <div className="md:pt-5 animate-scale-in">       
+          <div className="md:pt-5 animate-scale-in">
             <h1 className="text-5xl md:text-6xl font-bold">
               <span className="leading-normal ">About Me</span>
             </h1>
@@ -68,25 +67,27 @@ export const AboutSection = () => {
           </div>
 
           {/* Body Text */}
-          <p className="text-base sm:text-lg leading-relaxed sm:leading-loose max-w-full sm:max-w-none px-4 sm:px-0 text-justify sm:text-justify text-foreground/80">
-            I'm a passionate Software Engineer and Data enthusiast, fascinated by the power of information and intelligent systems. 
-            I love transforming raw data into actionable insights and building innovative applications that solve real-world problems. 
-            My journey revolves around exploring the world of Machine Learning, Data Processing, and AI, while continuously challenging 
-            myself to learn, create, and push the boundaries of technology. My ultimate goal is to design impactful solutions and carve a 
-            space as a forward-thinking creator in the tech landscape.    
-          </p>
+          <div className="space-y-4 text-base sm:text-lg leading-relaxed sm:leading-loose max-w-full sm:max-w-none px-4 sm:px-0 text-justify sm:text-justify text-foreground/80">
+            <p>
+              The field of Artificial Intelligence research is experiencing an unprecedented evolution, transitioning from rigid heuristic models to dynamic, self-learning architectures capable of solving highly complex and high-dimensional challenges. Modern deep learning and intelligent systems research continue to redefine how computational agents perceive environments, optimize decision-making pathways, and generalize knowledge across diverse domains.
+            </p>
+            <p>
+              At the core of this scientific landscape lies the pursuit of scalable intelligence combining neural optimization, representation learning, and decentralized multi-agent coordination with solid computational foundations. Operating at this frontier, my work is dedicated to exploring foundational algorithms and engineering resilient, high-performance systems that bridge the gap between theoretical discovery and transformative real-world impact.
+            </p>
+          </div>
         </div>
 
-         <div className="flex-shrink-0 lg:mr-5 mt-6 
+        <div className="flex-shrink-0 lg:mr-5 mt-6 
                 w-[280px] h-[280px]   /* default mobile size */
                 sm:w-[280px] sm:h-[280px] 
                 md:w-[300px] md:h-[300px] 
-                lg:w-[350px] lg:h-[350px]">
-           <img 
-           src="/Photo-Chakib.png" 
-           alt="Profile" 
-           className="w-full h-full object-cover rounded-full"
-           />
+                lg:w-[350px] lg:h-[350px]
+                rounded-full overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)]">
+          <img
+            src="/Photo-Chakib1.jpg"
+            alt="Profile"
+            className="w-full h-full object-cover object-[50%_15%] rounded-full"
+          />
         </div>
 
       </div>

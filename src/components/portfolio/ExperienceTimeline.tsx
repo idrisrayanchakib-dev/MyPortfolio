@@ -85,8 +85,8 @@ export const ExperienceTimeline = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "./My Resume.pdf";   // Path to your PDF in public folder
-    link.download = "My Resume";     // Name for downloaded file
+    link.href = "./CV-Idris-Rayan-Chakib-RVB.pdf";   // Path to your PDF in public folder
+    link.download = "Resume-Idris-Rayan-Chakib";     // Name for downloaded file
     link.click();
   };
   return (
@@ -107,18 +107,16 @@ export const ExperienceTimeline = () => {
           {experiences.map((experience, index) => (
             <div
               key={experience.id}
-              className={`relative mb-20 ${
-                index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2"
-              }`}
+              className={`relative mb-20 ${index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2"
+                }`}
             >
               {/* Timeline node */}
               <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full ring-4 ring-background border-2 border-card transform md:-translate-x-1/2" />
 
               {/* Card */}
               <div
-                className={`ml-16 md:ml-0 ${
-                  index % 2 === 0 ? "md:mr-8" : "md:ml-8"
-                }`}
+                className={`ml-16 md:ml-0 ${index % 2 === 0 ? "md:mr-8" : "md:ml-8"
+                  }`}
               >
                 <Card className="bg-background transition duration-300 text-left">
                   <CardHeader className="text-left">

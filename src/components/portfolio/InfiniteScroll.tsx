@@ -1,42 +1,64 @@
-import { ReactNode, useRef, useEffect, useState } from "react";
+import { ReactNode } from "react";
 
 interface InfiniteScrollProps {
   children: ReactNode;
-  speed?: number; // pixels per second
+  speed?: number; // seconds per full cycle
   direction?: "left" | "right";
 }
 
-const InfiniteScroll = ({ 
-  children, 
-  speed = 60, 
-  direction = "left" 
+// Number of copies — enough to cover any viewport width seamlessly
+const N = 6;
+// translateX amount = -(100 / N)% = exactly one copy width
+const TRANSLATE = `${-(100 / N).toFixed(6)}%`;
+
+const InfiniteScroll = ({
+  children,
+  speed = 22,
+  direction = "left",
 }: InfiniteScrollProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(0);
+  const id = direction; // unique per direction
+  const keyframeName = `marquee-infinite-${id}`;
 
-  useEffect(() => {
-    if (containerRef.current) {
-      setWidth(containerRef.current.scrollWidth);
+  const keyframeCSS = `
+    @keyframes ${keyframeName} {
+      0%   { transform: translateX(${direction === "left" ? "0" : TRANSLATE}); }
+      100% { transform: translateX(${direction === "left" ? TRANSLATE : "0"}); }
     }
-  }, [children]);
-
-  const duration = width > 0 ? width / speed : 0;
+  `;
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <>
+      {/* Inject dynamic keyframe — minimal, no layout impact */}
+      <style>{keyframeCSS}</style>
+
       <div
-        className="flex whitespace-nowrap"
+        className="relative w-full overflow-hidden"
         style={{
-          width: width ? width * 2 : "auto", // total width of both copies
-          animation: `${direction === "left" ? "marquee-left" : "marquee-right"} ${duration}s linear infinite`,
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
         }}
       >
-        <div ref={containerRef} className="flex gap-12">
-          {children}
+        {/*
+          Track = max-content = N × one-copy-width.
+          translateX(-(100/N)%) = exactly one copy → seamless, no gap.
+          N=6 ensures the track is always wider than the viewport.
+        */}
+        <div
+          style={{
+            display: "flex",
+            width: "max-content",
+            animation: `${keyframeName} ${speed}s linear infinite`,
+            willChange: "transform",
+          }}
+        >
+          {Array.from({ length: N }).map((_, i) => (
+            <div key={i} className="flex items-center gap-16 px-8">
+              {children}
+            </div>
+          ))}
         </div>
-        <div className="flex gap-12">{children}</div>
       </div>
-    </div>
+    </>
   );
 };
 
