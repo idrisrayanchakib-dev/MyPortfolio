@@ -48,6 +48,30 @@ const projects = [
     githubUrl: "https://github.com/idrisrayanchakib-dev/nexus-distributed-system",
     featured: true
   },
+  {
+  id: 4,
+    title: "Fraud Monitoring Website with Machine Learning Solution",
+    category: "fullstack",
+    description: "A full-stack fraud monitoring dashboard built to detect SIM Box fraud in telecommunications. Combines a feedforward neural network trained on call detail records (CDRs) with a role-based React dashboard for real-time monitoring, MSISDN tracking, traffic analysis, and automated blocking of suspicious numbers.",
+    image: "/fraud-monitoring-cover.jpg",
+    techStack: ["React", "Vite", "Material UI", "React Router", "Node.js", "Express.js", "MySQL", "Python", "TensorFlow", "Vercel"],
+    metrics: { performance: "Real-time fraud detection", scale: "Role-based access control", impact: "Automated SIM Box blocking" },
+    demoUrl: "https://fraud-monitoring-webapp.vercel.app",
+    githubUrl: "https://github.com/idrisrayanchakib-dev/Fraud-monitoring-webapp.git",
+    featured: true
+  },
+  {
+  id: 5,
+    title: "NASA orrery web app",
+    category: "fullstack",
+    description: "An interactive 3D orrery that visualizes the solar system's planetary orbits and motion in real time, using accurate orbital mechanics to render an explorable model of the planets around the sun directly in the browser.",
+    image: "/nasa-orrery-cover.jpg",
+    techStack: ["Three.js", "X3DOM", "JavaScript", "HTML/CSS", "Vercel"],
+    metrics: { performance: "Real-time 3D rendering", scale: "Full planetary system", impact: "Interactive orbital explorer" },
+    demoUrl: "https://nasa-orrery-webapp.vercel.app",
+    githubUrl: "https://github.com/idrisrayanchakib-dev/nasa-orrery-webapp.git",
+    featured: true
+  }
 ];
 
 
