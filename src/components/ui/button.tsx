@@ -26,6 +26,8 @@ const buttonVariants = cva(
           "relative bg-transparent border border-gray-500 text-gray-300 hover:shadow-[0_0_8px_2px_rgba(200,200,200,0.5)] hover:border-gray-400 transition-all duration-300",
         solidCyan:
           "bg-cyan-500 text-white hover:bg-cyan-400 focus-visible:ring-cyan-300",
+        iconGlow:
+          "bg-transparent border border-transparent text-muted-foreground hover:text-primary hover:border-primary hover:shadow-[0_0_12px_2px_rgba(56,224,255,0.45)] transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -195,7 +195,7 @@
   }
 
   .project-card::before {
-    @apply absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity duration-500;
+    @apply absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity duration-500 pointer-events-none;
     content: '';
   }
 

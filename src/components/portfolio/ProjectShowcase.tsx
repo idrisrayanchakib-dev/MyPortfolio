@@ -149,12 +149,12 @@ export const ProjectShowcase = () => {
                   </Badge>
                   <div className="flex space-x-2">
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Button variant="ghost" size="sm" className="p-2 hover-glow">
+                      <Button variant="iconGlow" size="sm" className="p-2 rounded-full">
                         <Github className="h-4 w-4" />
                       </Button>
                     </a>
                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      <Button variant="ghost" size="sm" className="p-2 hover-glow">
+                      <Button variant="iconGlow" size="sm" className="p-2 rounded-full">
                         <ExternalLink className="h-4 w-4" />
                       </Button>
                     </a>
