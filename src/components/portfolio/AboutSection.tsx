@@ -77,12 +77,12 @@ export const AboutSection = () => {
           </div>
         </div>
 
-        <div className="flex-shrink-0 lg:mr-5 mt-6 
+        <div className="flex-shrink-0 lg:mr-5 mt-6
                 w-[280px] h-[280px]   /* default mobile size */
-                sm:w-[280px] sm:h-[280px] 
-                md:w-[300px] md:h-[300px] 
+                sm:w-[280px] sm:h-[280px]
+                md:w-[300px] md:h-[300px]
                 lg:w-[350px] lg:h-[350px]
-                rounded-full overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)]">
+                rounded-full overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] transform-gpu isolate">
           <img
             src="/Photo-Chakib1.jpg"
             alt="Profile"

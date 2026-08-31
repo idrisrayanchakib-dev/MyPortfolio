@@ -12,8 +12,8 @@ export const HeroSection = () => {
     <section id="Home" className="relative min-h-screen flex flex-col">
       
       {/* Header / Navigation */}
-     <div className="fixed top-4 inset-x-0 z-40 flex justify-center">
-  <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 rounded-3xl text-white shadow-glow backdrop-blur-sm flex items-center justify-center lg:justify-between ">
+     <div className="fixed top-4 inset-x-0 z-40 flex justify-center isolate transform-gpu">
+  <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 rounded-3xl text-white shadow-glow backdrop-blur-sm flex items-center justify-center lg:justify-between transform-gpu">
     
     {/* Left side (Name) */}
     <span className="text-lg font-semibold whitespace-nowrap">
