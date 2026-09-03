@@ -362,13 +362,13 @@
   border: none;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 25px rgba(0, 217, 255, 0.2), 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   will-change: transform;
 }
 
 .electric-border-btn:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 35px rgba(0, 217, 255, 0.5), 0 0 70px rgba(0, 153, 204, 0.3), 0 12px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .electric-border-btn:active {
@@ -390,10 +390,10 @@
     #ffffff 352deg,
     #00d9ff 360deg
   );
-  animation: electric-spin 2.8s linear infinite;
+  opacity: 0;
+  transition: opacity 0.25s ease;
   pointer-events: none;
-  will-change: transform;
-  contain: layout style;
+  contain: layout style paint;
 }
 
 .electric-glow {
@@ -411,11 +411,10 @@
     #38bdf8 360deg
   );
   filter: blur(8px);
-  opacity: 0.75;
-  animation: electric-spin 2.8s linear infinite;
+  opacity: 0;
+  transition: opacity 0.25s ease;
   pointer-events: none;
-  will-change: transform;
-  contain: layout style;
+  contain: layout style paint;
 }
 
 .electric-content {
@@ -449,6 +448,8 @@
 .electric-border-btn:hover .electric-beam,
 .electric-border-btn:hover .electric-glow {
   opacity: 1;
+  animation: electric-spin 2.8s linear infinite;
+  will-change: transform;
 }
 
 .btn-super {

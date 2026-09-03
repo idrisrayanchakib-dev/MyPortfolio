@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -81,14 +80,6 @@ const experiences = [
 ];
 
 export const ExperienceTimeline = () => {
-  const [activeCTA, setActiveCTA] = React.useState<string | null>(null);
-
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "./CV-Idris-Rayan-Chakib-RVB.pdf";   // Path to your PDF in public folder
-    link.download = "Resume-Idris-Rayan-Chakib";     // Name for downloaded file
-    link.click();
-  };
   return (
     <section id="experience" className="py-16 px-6 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
@@ -203,18 +194,18 @@ export const ExperienceTimeline = () => {
         </div>
 
 
-        <div className="text-center mt-16">
-          <Button
-            variant="cyanGlow"
-            size="lg"
-            className={`glass-card ${activeCTA === "cert"
-              ? "bg-gradient-primary text-primary-foreground hover:shadow-none"
-              : ""
-              }`}
-            onClick={handleDownload}
-          >
-            Download full resume
-            <Download className="w-5 h-5" />
+        <div className="text-center mt-16 flex flex-wrap items-center justify-center gap-4">
+          <Button asChild variant="cyanGlow" size="lg" className="glass-card">
+            <a href="/cv-chakib-anglais.pdf" download="Idris-Rayan-Chakib-Resume-EN.pdf">
+              Resume (English)
+              <Download className="w-5 h-5" />
+            </a>
+          </Button>
+          <Button asChild variant="cyanGlow" size="lg" className="glass-card">
+            <a href="/cv-chakib-francais.pdf" download="Idris-Rayan-Chakib-CV-FR.pdf">
+              CV (Français)
+              <Download className="w-5 h-5" />
+            </a>
           </Button>
         </div>
       </div>

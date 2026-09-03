@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { MobileFab } from "@/components/portfolio/mobile-fab";
+import { Download } from 'lucide-react';
 
 
 export const HeroSection = () => {
@@ -68,6 +69,22 @@ export const HeroSection = () => {
               </span>
             </span>
           </button>
+        </div>
+
+        {/* Resume Downloads */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <Button asChild variant="subtleGlow" size="sm">
+            <a href="/cv-chakib-anglais.pdf" download="Idris-Rayan-Chakib-Resume-EN.pdf">
+              Resume (EN)
+              <Download className="w-4 h-4" />
+            </a>
+          </Button>
+          <Button asChild variant="subtleGlow" size="sm">
+            <a href="/cv-chakib-francais.pdf" download="Idris-Rayan-Chakib-CV-FR.pdf">
+              CV (FR)
+              <Download className="w-4 h-4" />
+            </a>
+          </Button>
         </div>
       </div>
 
